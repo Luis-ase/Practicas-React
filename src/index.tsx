@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {Home, Bateri} from './App';
+import {Home, Bateri, CodigoQR} from './App';
 
 
 import reportWebVitals from './reportWebVitals';
@@ -19,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/Project/Bateri",
     element: <Bateri/>,
+  },
+  {
+    path: "/Project/CodigoQR",
+    element: <CodigoQR/>,
   },
 ]);
 const root = ReactDOM.createRoot(

@@ -12,9 +12,8 @@ function Home() {
           {/* lista */}
           <ol>
             <Link to={"/Project/Bateri"}><li>Bateria</li></Link>
-            <Link to={"/"}><li>Projecto 2</li></Link>
+            <Link to={"/Project/CodigoQR"}><li>Codigo QR</li></Link>
             <Link to={"/"}><li>Projecto 3</li></Link>
-            
             
           </ol>
       </div>
