@@ -1,11 +1,8 @@
+import Home from "./Componentes/Home/Home";
+import Bateri from "./Componentes/Project/Bateria-1/Bateria";
 
-function App() {
-  return (
-    <div >
-      <h2 className="text-3xl font-bold underline">HEllo</h2>
-      
-    </div>
-  );
-}
 
-export default App;
+
+
+
+export {Home, Bateri}

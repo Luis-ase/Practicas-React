@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import {Home, Bateri} from './App';
+
+
 import reportWebVitals from './reportWebVitals';
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -11,7 +14,11 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <Home/>,
+  },
+  {
+    path: "/Project/Bateri",
+    element: <Bateri/>,
   },
 ]);
 const root = ReactDOM.createRoot(
