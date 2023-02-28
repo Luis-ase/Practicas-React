@@ -13,7 +13,7 @@ function Home() {
           <ol>
             <Link to={"/Project/Bateri"}><li>Bateria</li></Link>
             <Link to={"/Project/CodigoQR"}><li>Codigo QR</li></Link>
-            <Link to={"/"}><li>Projecto 3</li></Link>
+            <Link to={"/Project/FormInt"}><li>Formulario Interactivo </li></Link>
             
           </ol>
       </div>
