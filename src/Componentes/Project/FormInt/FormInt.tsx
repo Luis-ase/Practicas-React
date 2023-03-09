@@ -5,7 +5,7 @@ import favicon from "./images/favicon-32x32.png"
 import icon from "./images/icon-complete.svg"
 import Cardlogo from "./images/card-logo.svg"
 import { useState } from "react";
-
+import mobil from "./images/bg-main-mobile.png"
 interface Formulario {
     usuario: string,
     codigo: number,
@@ -17,7 +17,8 @@ function FormInt() {
     const [data, setData] = useState<Formulario[]>([])
 
     return (
-        <div>
+        <div className="font-mono">
+            <img src={mobil} alt="background mobil" />
             <img src={Cardfrontal} alt="Card Frontal" />
             <img src={Cardback} alt="Cardback" />
             <img src={favicon} alt="Cardback" />
@@ -25,6 +26,12 @@ function FormInt() {
             <div className="bg-red-900">
 
             <img src={Cardlogo} alt="CardLogo" />
+            </div>
+
+
+            <div>
+                <h2>Thank you!</h2>
+                <p>We've added  your card details</p>
             </div>
             {/* 0000 0000 0000 0000
             Jane Appleseed
@@ -41,19 +48,19 @@ function FormInt() {
                 <div>
                     <div>
                         <label htmlFor="">Cardholder Name</label>
-                        <input type="text" placeholder="e.g. Jane Appleseed"/>
+                        <input type="text" placeholder="e.g. Jane Appleseed" className="border-slate-500 border rounded-lg"/>
                     </div>
                     <div>
                         <label htmlFor=""> Card Number</label>
-                        <input type={"number"} placeholder="e.g. 1234 5678 9123 0000" />
+                        <input type={"number"} placeholder="e.g. 1234 5678 9123 0000" className="border-slate-500 border rounded-lg"/>
                     </div>
                     <div>
                         <label htmlFor=""> Exp. Date (MM/YY)</label>
-                        <input type={"number"} placeholder="MM"/>
-                        <input type={"number"} placeholder="YY" />
+                        <input type={"number"} placeholder="MM" className="border-slate-500 border rounded-lg"/>
+                        <input type={"number"} placeholder="YY"  className="border-slate-500 border rounded-lg"/>
                         <div>
                             <label htmlFor="">CVC</label>
-                        <input type={"number"} placeholder="e.g. 123"/>
+                        <input type={"number"} placeholder="e.g. 123" className="border-slate-500 border rounded-lg"/>
                         </div>
                     </div>
                 <button>Confirm</button>

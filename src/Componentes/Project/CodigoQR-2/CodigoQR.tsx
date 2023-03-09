@@ -18,7 +18,7 @@ function CodigoQR() {
                         <p className="text-center">Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
                         <p className="text-center">
                          Challenge by <Link to="https://www.frontendmentor.io?ref=challenge" target="_blank"rel="noreferrer" >Frontend Mentor</Link>.
-                         Coded by <Link to="#">Michael Luis Condori Paye</Link>.
+                         Coded by Michael Luis Condori Paye
                         </p>
                         </div>
                     </div>
