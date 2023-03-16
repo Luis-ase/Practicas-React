@@ -16,6 +16,8 @@ interface Formulario {
 }
 
 function FormInt() {
+
+    const [succes,setSucces]= useState(false)
     const [data, setData] = useState<Formulario>({
         usuario: "",
         codigo: 0,
@@ -33,7 +35,9 @@ function FormInt() {
         return newState
     }
 
-
+    function chamgeState(){
+        return  setTimeout(()=>setSucces(true),3000)
+    }
 
 
     return (
@@ -64,7 +68,7 @@ function FormInt() {
             We've added your card details
             Continue */}
             <div className="flex justify-center">
-                <form action="">
+               { <form onSubmit={chamgeState}>
                     <div className={`flex justify-center flex-col`}>
                         <div className="flex flex-col p-4">
                             <label htmlFor="" className="text-[#4c1d95]">Cardholder Name</label>
@@ -111,9 +115,9 @@ function FormInt() {
                                 className="p-2  border border-[#a21caf] rounded-lg bg-gray-50 sm:text-xs focus:border-[#a21caf]" />
                             </div>
                         </div>
-                        <button className={`text-white bg-[#581c87] rounded-lg h-10 font-bold`}>Confirm</button>
+                        <button type="submit" className={`text-white bg-[#581c87] rounded-lg h-10 font-bold`}>Confirm</button>
                     </div>
-                </form>
+                </form>}
             </div>
             {/* 
             <div className="attribution">
