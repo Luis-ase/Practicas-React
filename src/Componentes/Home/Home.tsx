@@ -14,6 +14,7 @@ function Home() {
             <Link to={"/Project/Bateri"}><li>Bateria</li></Link>
             <Link to={"/Project/CodigoQR"}><li>Codigo QR</li></Link>
             <Link to={"/Project/FormInt"}><li>Formulario Interactivo </li></Link>
+            <Link to={"/Project/Small"}><li>Projectos pequeños </li></Link>
             
           </ol>
       </div>
@@ -21,3 +22,5 @@ function Home() {
   }
   
   export default Home;
+
+  

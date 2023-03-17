@@ -36,7 +36,7 @@ function FormInt() {
     }
 
     function chamgeState(){
-        return  setTimeout(()=>setSucces(true),3000)
+        return setTimeout(()=>setSucces(true),3000)
     }
 
 
