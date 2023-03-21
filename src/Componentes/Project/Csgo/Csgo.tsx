@@ -1,5 +1,9 @@
-import "./Csgo.css"
+import { useState } from "react"
 
+import { Link } from "react-router-dom";
+import "./Csgo.css"
+import { FaBars, FaAngleDoubleDown } from "react-icons/fa";
+import estilos from "../../styles/estilos";
 
 
 
@@ -9,6 +13,8 @@ import "./Csgo.css"
 
 
 function Csgo() {
+
+    const [open, setOpen] = useState(false)
 
     type Allaudios = {
         id: number,
@@ -50,7 +56,7 @@ function Csgo() {
     ];
 
 
-    function handlePlayAudio(id:any) {
+    function handlePlayAudio(id: number) {
         if (id === 1) {
             const audio = new Audio(require("./AudiosCs/Wasa.wav"));
             audio.play();
@@ -80,17 +86,55 @@ function Csgo() {
 
     return (
         <div className="Container min-h-screen bg-cover text-white">
-            {/* <button onClick={handlePlayAudio}>Play Audio</button> */}
-            {list_Audios?.map((e)=>
-            <div>
-                <button onClick={()=>handlePlayAudio(e.id)}>{e.name}</button>
-            </div>
-            )
-                
-            }
-               
-          
-            
+            <header className="px-4">
+                <nav className="w-full h-40 max-w-[1200px] m-auto flex justify-between items-center">
+                    <div>
+                        <Link to={"#"} className="hover:text-orange-600 font-bold text-2xl">
+                            Csgo
+                        </Link>
+                    </div>
+                    <ul className="gap-x-4 hidden sm:flex ">
+                        <li><Link to={"#Home"} className="hover:text-orange-600 text-lg">Home</Link></li>
+                        <li><Link to={"#About"} className="hover:text-orange-600 text-lg">About</Link></li>
+                        <li><Link to={"#Contact"} className="hover:text-orange-600 text-lg">Contact</Link></li>
+                        <li><Link to={"#Service"} className="hover:text-orange-600 text-lg">Service</Link></li>
+                    </ul>
+                    <Link to={"#start"} className="hidden sm:block hover:text-orange-600 bg-orange-500  px-4 py-2 border-none rounded-full ">Get Start</Link>
+                    <div className="block sm:hidden">
+
+                        {open ? <FaAngleDoubleDown className="hover:text-orange-600 text-lg cursor-pointer" onClick={() => setOpen(true ? false : true)} /> :
+                            <FaBars className="hover:text-orange-600 text-lg cursor-pointer" onClick={() => setOpen(false ? false : true)} />}
+                    </div>
+                </nav>
+                {/* mobile */}
+                <div className={`${open ? "hidden" : "block"} drop absolute right-10 top-16 bg-t blur-[0.6px] rounded-xl w-[300px] h-[] sm:hidden  `}>
+                    <ul className="gap-4  p-4 ">
+                        <li className="flex justify-center items-center"><Link to={"#Home"} className="hover:text-orange-600 text-lg ">Home</Link></li>
+                        <li className="flex justify-center items-center"><Link to={"#About"} className="hover:text-orange-600 text-lg">About</Link></li>
+                        <li className="flex justify-center items-center"><Link to={"#Contact"} className="hover:text-orange-600 text-lg">Contact</Link></li>
+                        <li className="flex justify-center items-center"><Link to={"#Service"} className="hover:text-orange-600 text-lg">Service</Link></li>
+                        <li className=" flex justify-center  p-4 w-full"><Link to={"#start"} className="  hover:text-orange-600 bg-orange-500  px-4 py-2 border-none rounded-full  w-full text-center" >Get Start</Link></li>
+                    </ul>
+                </div>
+            </header>
+
+            <main>
+                <div className={`${estilos.flexCenter} ${estilos.padding} gap-4 `}>
+
+                    {/* <button onClick={handlePlayAudio}>Play Audio</button> */}
+                    {list_Audios?.map((e) =>
+                       
+                            
+                            <button  key={e.id} onClick={() => handlePlayAudio(e.id)} className={`bg-pistola  bg-cover w-[200px] h-[200px] blur-[0.6px] opacity-50 ${estilos.flexCenter}`} >
+                                <span className={` text-2xl font-bolt `}>
+                                {e.name}
+                                </span>
+                            </button>
+                            
+                    )
+                    }
+                </div>
+            </main>
         </div>
     )
 }
