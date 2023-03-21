@@ -59,27 +59,26 @@ function Csgo() {
     function handlePlayAudio(id: number) {
         if (id === 1) {
             const audio = new Audio(require("./AudiosCs/Wasa.wav"));
-            audio.play();
-        }
+            return audio.play();        }
         if (id === 2) {
             const audio = new Audio(require("./AudiosCs/pimpam.mp3"));
-            audio.play();
+           return audio.play();
         }
         if (id === 3) {
             const audio = new Audio(require("./AudiosCs/Metiro.mp3"));
-            audio.play();
+            return audio.play();
         }
         if (id === 4) {
             const audio = new Audio(require("./AudiosCs/lomatocuchi.wav"));
-            audio.play();
+            return audio.play();
         }
         if (id === 5) {
             const audio = new Audio(require("./AudiosCs/holavengo.wav"));
-            audio.play();
+            return audio.play();
         }
         if (id === 6) {
             const audio = new Audio(require("./AudiosCs/Team.wav"));
-            audio.play();
+            return audio.play();
         }
     };
 
@@ -124,12 +123,14 @@ function Csgo() {
                     {/* <button onClick={handlePlayAudio}>Play Audio</button> */}
                     {list_Audios?.map((e) =>
                        
-                            
-                            <button  key={e.id} onClick={() => handlePlayAudio(e.id)} className={`bg-pistola  bg-cover w-[200px] h-[200px] blur-[0.6px] opacity-50 ${estilos.flexCenter}`} >
+                            <div className="hover:shadow-blue-300">
+
+                            <button  key={e.id} onClick={() => handlePlayAudio(e.id)} className={`bg-pistola rounded-xl bg-cover w-[200px] h-[200px] blur-[0.6px] opacity-70 ${estilos.flexCenter} hover:shadow-sky-900 hover:shadow-md hover:scale-105 hover:duration-500 hover:rounded-lg`} >
                                 <span className={` text-2xl font-bolt `}>
                                 {e.name}
                                 </span>
                             </button>
+                            </div>
                             
                     )
                     }
