@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {Home, Bateri, CodigoQR,FormInt, Small} from './App';
+import {Home, Bateri, CodigoQR,FormInt, Small, Csgo} from './App';
 
 
 import reportWebVitals from './reportWebVitals';
@@ -31,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/Project/Small",
     element: <Small/>,
+  },
+  {
+    path: "/Project/Csgo",
+    element: <Csgo/>,
   },
 ]);
 const root = ReactDOM.createRoot(
