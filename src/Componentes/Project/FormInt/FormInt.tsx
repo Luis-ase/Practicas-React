@@ -76,7 +76,7 @@ function FormInt() {
                             name="usuario"
                             value={data.usuario}
                             onChange={followingChanges}
-                            className=" p-2  border border-[#a21caf] rounded-lg bg-gray-50 sm:text-xs focus:border-[#a21caf] "/>
+                            className="  p-2  border border-[#a21caf] rounded-lg bg-gray-50 sm:text-xs focus:border-[#a21caf] "/>
                         </div>
                         <div className="flex flex-col p-4">
                             <label htmlFor="" className="text-[#4c1d95]"> Card Number</label>

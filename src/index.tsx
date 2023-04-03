@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {Home, Bateri, CodigoQR,FormInt, Small, Csgo} from './App';
+import {Home, Bateri, CodigoQR,FormInt, Small, Csgo,Todolist} from './App';
 
 
 import reportWebVitals from './reportWebVitals';
@@ -35,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/Project/Csgo",
     element: <Csgo/>,
+  },
+  {
+    path: "/Project/Todolist",
+    element: <Todolist/>,
   },
 ]);
 const root = ReactDOM.createRoot(

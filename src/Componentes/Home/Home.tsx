@@ -16,6 +16,7 @@ function Home() {
             <Link to={"/Project/FormInt"}><li>Formulario Interactivo </li></Link>
             <Link to={"/Project/Small"}><li>Projectos pequeños </li></Link>
             <Link to={"/Project/Csgo"}><li>Csgo Audios </li></Link>
+            <Link to={"/Project/Todolist"}><li>Todo List</li></Link>
           </ol>
       </div>
     );
