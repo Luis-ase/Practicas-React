@@ -28,7 +28,7 @@ export default function Todolist() {
                         
                         
                         <button className={`
-                        text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2
+                        text-white bg-gradient-to-r from-purple-800 to-pink-700 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2
                         ${estilos.estilosnone} font-semibold`}>
                             Agregar tarea
                         </button>
@@ -36,12 +36,12 @@ export default function Todolist() {
                        
                     </form>
                 </header>
-                <main>
+                <main className={`py-8 px-4 max-w-[800px] w-full my-0 mx-auto`}>
                     <section>
                         <h2>
-
+                        Tareas
                         </h2>
-                        <div>
+                        <div className={`flex justify-between items-center`}>
                             <div>
                                 <input
                                     type="text"
@@ -59,13 +59,20 @@ export default function Todolist() {
                                 />
                             </div>
                             {/* Button */}
-                            <div className={``}>
+                            <div className={`flex justify-between `}>
                                 <button className={`
-                                
-                                ${estilos.estilosnone}`}>
+                              text-white bg-gradient-to-br from-green-800 to-blue-900 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2
+                              ${estilos.estilosnone}
+                              ${estilos.marginX}
+                                `}>
+                                  
                                     Editar
+                                 
                                 </button>
-                                <button className={`${estilos.estilosnone}`}>
+                                <button className={`
+                                text-white bg-gradient-to-br from-red-600 to-blue-900 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2
+                                ${estilos.estilosnone}
+                                `}>
                                     Eliminar
                                 </button>
                             </div>
