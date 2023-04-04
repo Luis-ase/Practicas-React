@@ -1,17 +1,47 @@
+import { useState } from "react";
 import estilos from "../../styles/estilos"
 
+interface data{
+    id:number,
+    name:string
+}
 export default function Todolist() {
+
+   
+    const [lista,setLista] = useState<Array<data>>([])
+    const [tareas,setTareas] =useState<data>({
+        id:0,
+        name:""
+    })
+    
+    const createTarea =(event:any)=>{
+        event.preventDefault();
+        setTareas({id:lista.length,name:event.target.value})
+    }
+    
+    const submitTareas= (event:any)=>{
+        event.preventDefault();
+        setLista([...lista,tareas])
+        setTareas({
+            id:0,
+            name:""
+        })
+        return alert("tarea creada")
+    }
+    console.log(lista)
     return (
         <>
             <div className={`${estilos.padding} ${estilos.paragraph} flex flex-col min-h-screen bg-slate-800 text-gray-400`}>
 
                 <header className={`py-8 px-4 max-w-[800px] w-full my-0 mx-auto`}>
                     <h1 className="text-3xl text-center ">Todolist</h1>
-                    <form action="" className={`flex justify-evenly ${estilos.paddingY}`}>
+                    <form onSubmit={submitTareas} className={`flex justify-evenly ${estilos.paddingY}`}>
                         
                         <input
                             type="text"
+                            name="name"
                             id="new-task"
+                            value={tareas.name}
                             placeholder="Que tarea vas hacer hoy"
                             className={`
                             bg-gray-700
@@ -24,10 +54,13 @@ export default function Todolist() {
                             text-xl
                             rounded-lg
                             `}
+                        onChange={createTarea}
                         />
                         
                         
-                        <button className={`
+                        <button type="submit" 
+                        
+                        className={`
                         text-white bg-gradient-to-r from-purple-800 to-pink-700 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2
                         ${estilos.estilosnone} font-semibold`}>
                             Agregar tarea
