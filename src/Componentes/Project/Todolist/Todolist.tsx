@@ -1,34 +1,53 @@
 import { useState } from "react";
 import estilos from "../../styles/estilos"
-
-interface data{
-    id:number,
-    name:string
-}
+import Cardlist from "./Cardlist/Cardlist";
 export default function Todolist() {
-
-   
-    const [lista,setLista] = useState<Array<data>>([])
-    const [tareas,setTareas] =useState<data>({
-        id:0,
-        name:""
-    })
-    
-    const createTarea =(event:any)=>{
-        event.preventDefault();
-        setTareas({id:lista.length,name:event.target.value})
+    interface data {
+        id: number,
+        name: string,
+        complet:boolean,
     }
-    
-    const submitTareas= (event:any)=>{
+
+
+    const [lista, setLista] = useState<Array<data>>([])
+    const [tareas, setTareas] = useState<data>({
+        id: 0,
+        name: "",
+        complet:false,
+    })
+
+    const createTarea = (event: any) => {
         event.preventDefault();
-        setLista([...lista,tareas])
+        setTareas({ id: lista.length, name: event.target.value,complet:false })
+    }
+
+    const submitTareas = (event: any) => {
+        event.preventDefault();
+        setLista([...lista, tareas])
         setTareas({
-            id:0,
-            name:""
+            id: 0,
+            name: "",
+            complet:false
         })
         return alert("tarea creada")
     }
-    console.log(lista)
+    
+    const onChageComplet =(id:number)=>{
+        setLista(lista.map((task)=>{
+            if(task.id === id){
+                return {...task,complet:true}
+            }
+            return task
+        }))
+       
+        console.log(lista)
+        
+    }
+    const deleteTask =(id:number)=>{
+        const eliminar = lista.filter((e)=> e.id !== id )
+        return setLista(eliminar)
+    }
+
     return (
         <>
             <div className={`${estilos.padding} ${estilos.paragraph} flex flex-col min-h-screen bg-slate-800 text-gray-400`}>
@@ -36,7 +55,7 @@ export default function Todolist() {
                 <header className={`py-8 px-4 max-w-[800px] w-full my-0 mx-auto`}>
                     <h1 className="text-3xl text-center ">Todolist</h1>
                     <form onSubmit={submitTareas} className={`flex justify-evenly ${estilos.paddingY}`}>
-                        
+
                         <input
                             type="text"
                             name="name"
@@ -44,7 +63,7 @@ export default function Todolist() {
                             value={tareas.name}
                             placeholder="Que tarea vas hacer hoy"
                             className={`
-                            bg-gray-700
+                            bg-gray-900
                             caret-pink-500
                             ${estilos.estilosnone} 
                             placeholder:text-gray-500 
@@ -54,64 +73,29 @@ export default function Todolist() {
                             text-xl
                             rounded-lg
                             `}
-                        onChange={createTarea}
+                            required
+                            onChange={createTarea}
                         />
-                        
-                        
-                        <button type="submit" 
-                        
-                        className={`
+
+
+                        <button type="submit"
+
+                            className={`
                         text-white bg-gradient-to-r from-purple-800 to-pink-700 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2
                         ${estilos.estilosnone} font-semibold`}>
                             Agregar tarea
                         </button>
 
-                       
+
                     </form>
                 </header>
                 <main className={`py-8 px-4 max-w-[800px] w-full my-0 mx-auto`}>
                     <section>
                         <h2>
-                        Tareas
+                            Tareas
                         </h2>
-                        <div className={`flex justify-between items-center`}>
-                            <div>
-                                <input
-                                    type="text"
-                                    className={`
-                                    bg-gray-700
-                                    caret-pink-500
-                                    ${estilos.estilosnone} 
-                                    placeholder:text-gray-500 
-                                    placeholder:font-semibold 
-                                    ${estilos.paddingX}
-                                    py-1
-                                    text-xl
-                                    rounded-lg
-                                    `}
-                                />
-                            </div>
-                            {/* Button */}
-                            <div className={`flex justify-between `}>
-                                <button className={`
-                              text-white bg-gradient-to-br from-green-800 to-blue-900 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2
-                              ${estilos.estilosnone}
-                              ${estilos.marginX}
-                                `}>
-                                  
-                                    Editar
-                                 
-                                </button>
-                                <button className={`
-                                text-white bg-gradient-to-br from-red-600 to-blue-900 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2
-                                ${estilos.estilosnone}
-                                `}>
-                                    Eliminar
-                                </button>
-                            </div>
-                        </div>
+                       <Cardlist elemetos={lista} eliminar={deleteTask} completado={onChageComplet}/>
                     </section>
-
                 </main>
 
 
