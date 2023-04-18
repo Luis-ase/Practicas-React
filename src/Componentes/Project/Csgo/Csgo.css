@@ -1,3 +1,4 @@
 .Container{
     background-image: url("./imageCs/Csgo.jpg");
+    background-repeat: no-repeat;
 }
