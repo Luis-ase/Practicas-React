@@ -106,28 +106,89 @@ const CssSmallProjects = () => {
                      {/* </div> */}
                  
                   {/*Cards*/}
+            <div className="flex justify-center items-center h-screen bg-blue-200">
+                
+                
+                
+             
 
-                <div>
-                    <div>
-                        <div>
-                            <img src="" alt="" />
+                <div className="flex justify-center items-center">
+                    {/* card */}
+                    <div className="group w-[300px] h-[400px] relative m-4 rounded-lg shadow-lg flex justify-center items-center overflow-hidden   ">
+                        
+                        <div className="w-full h-full">
+                            <img className="w-full h-full object-cover object-center" src="https://pbs.twimg.com/media/Ft3BThQXwAILIHP?format=png&name=small" alt="astr" />
                         </div>
 
-                        <div className="Conten">
-                            <div className="text">
-                                <h3>Mica</h3>
-                                <span>El mas capito</span>
+                        <div className="absolute w-full h-[11rem] backdrop-blur-md bottom-[-180px] group-hover:bottom-[0px] flex  justify-center items-center flex-col ">
+                            <div className=" opacity-0 flex justify-center items-center flex-col transition-all group-hover:opacity-100 delay-500 ">
+                                <h3 className="text-white uppercase text-2xl text-center font-bold  ">Mica</h3>
+                                <span className="text-white uppercase text-lg text-center font-bold ">El mas capito</span>
                             </div>
-                            <div className="social">
-                                <Link to={"https://www.facebook.com/"}>
+                            <div className="social opacity-0 text-purple-800 font-bold text-lg w-[60%] mx-4 my-0 flex justify-between transition-all translate-y-[40px] group-hover:translate-y-[10px] delay-500 group-hover:opacity-100  ">
+                                <Link  className="" to={"https://www.facebook.com/"}>
                                 <span>F</span>
                                 </Link>
 
-                                <Link to={"https://twitter.com/"}>
+                                <Link className=" " to={"https://twitter.com/"}>
                                 <span>T</span>
                                 </Link>
 
-                                <Link to={"https://www.youtube.com/"}>
+                                <Link className=" " to={"https://www.youtube.com/"}>
+                                <span>Y</span>
+                                </Link>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="group w-[300px] h-[400px] relative m-4 rounded-lg shadow-lg flex justify-center items-center overflow-hidden  ">
+                        <div className="w-full h-full">
+                            <img className="w-full h-full object-cover object-center" src="https://pbs.twimg.com/media/Ft3CfvhX0AIpR83?format=png&name=small" alt="astr" />
+                        </div>
+
+                        <div className="absolute w-full h-[11rem] backdrop-blur-md bottom-[-160px]   group-hover:bottom-[0px] flex  justify-center items-center flex-col ">
+                            <div className="opacity-0 flex justify-center items-center flex-col transition-all group-hover:opacity-100 delay-500 ">
+                                <h3 className="text-white uppercase text-2xl text-center font-bold  ">Mica</h3>
+                                <span className="text-white uppercase text-lg text-center font-bold ">El mas capito</span>
+                            </div>
+                            <div className="social opacity-0 text-purple-800 font-bold text-lg w-[60%] mx-4 my-0 flex justify-between transition-all translate-y-[40px] group-hover:translate-y-[10px] delay-500 group-hover:opacity-100 ">
+                                <Link  className=" " to={"https://www.facebook.com/"}>
+                                <span>F</span>
+                                </Link>
+
+                                <Link className=" " to={"https://twitter.com/"}>
+                                <span>T</span>
+                                </Link>
+
+                                <Link className=" " to={"https://www.youtube.com/"}>
+                                <span>Y</span>
+                                </Link>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="group w-[300px] h-[400px] relative m-4 rounded-lg shadow-lg flex justify-center items-center overflow-hidden ">
+                        <div className="w-full h-full">
+                            <img className="w-full h-full object-cover object-center" src="https://pbs.twimg.com/media/Ft3FppmWYAEThQ4?format=png&name=small" alt="astr" />
+                        </div>
+
+                        <div className="absolute w-full h-[11rem] backdrop-blur-md bottom-[-260px]   group-hover:bottom-[0]  flex  justify-center items-center flex-col ">
+                            <div className="opacity-0 flex justify-center items-center flex-col transition-all group-hover:opacity-100 delay-500">
+                                <h3 className="text-white uppercase text-2xl text-center font-bold  ">Mica</h3>
+                                <span className="text-white uppercase text-lg text-center font-bold ">El mas capito</span>
+                            </div>
+                            <div className="social opacity-0 text-purple-800 font-bold text-lg w-[60%] mx-4 my-0 flex justify-between transition-all translate-y-[40px] group-hover:translate-y-[10px] delay-500 group-hover:opacity-100">
+                                <Link  className="" to={"https://www.facebook.com/"}>
+                                <span>F</span>
+                                </Link>
+
+                                <Link className=" " to={"https://twitter.com/"}>
+                                <span>T</span>
+                                </Link>
+
+                                <Link className=" " to={"https://www.youtube.com/"}>
                                 <span>Y</span>
                                 </Link>
 
@@ -135,7 +196,8 @@ const CssSmallProjects = () => {
                         </div>
                     </div>
                 </div>
-        
+
+            </div> 
         </main>
     )
 }
