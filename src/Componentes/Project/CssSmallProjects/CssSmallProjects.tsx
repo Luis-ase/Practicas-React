@@ -104,6 +104,38 @@ const CssSmallProjects = () => {
                 </div> */}
             {/* </div> */}
                      {/* </div> */}
+                 
+                  {/*Cards*/}
+
+                <div>
+                    <div>
+                        <div>
+                            <img src="" alt="" />
+                        </div>
+
+                        <div className="Conten">
+                            <div className="text">
+                                <h3>Mica</h3>
+                                <span>El mas capito</span>
+                            </div>
+                            <div className="social">
+                                <Link to={"https://www.facebook.com/"}>
+                                <span>F</span>
+                                </Link>
+
+                                <Link to={"https://twitter.com/"}>
+                                <span>T</span>
+                                </Link>
+
+                                <Link to={"https://www.youtube.com/"}>
+                                <span>Y</span>
+                                </Link>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
         </main>
     )
 }
